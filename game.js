@@ -2,6 +2,7 @@ const questionEl = document.querySelector("#question");
 const choiceAnswerEl = document.querySelectorAll(".choiceAnswer");
 const questionCounterEl = document.querySelector("#questionCounter");
 const scoreEl = document.querySelector("#score");
+const progressItem = document.querySelector("#progressItem");
 
 
 let currentQuestion = {};
@@ -55,8 +56,13 @@ getNewQuestion = () => {
         return window.location.assign("end.html")
     }
 
+     // Update Progress Bar
+    progressItem.style.width = `${(questionCounter / Max_Questions) * 100}%`;
+    
     questionCounter++;
-    questionCounterEl.innerText = `${questionCounter}/${Max_Questions}`;
+    questionCounterEl.innerText = `Questions: ${questionCounter}/${Max_Questions}`;
+   
+
     const counterIndex = Math.floor(Math.random() * availableQuestions.length);
     currentQuestion = availableQuestions[counterIndex];
     questionEl.innerText = currentQuestion.question;
@@ -77,7 +83,6 @@ choiceAnswerEl.forEach((choice) => {
         aceptAnswer = false;
         const choiceElement = e.target;
         const choiceNumber = choiceElement.dataset["number"];
-        console.log(choiceNumber)
 
           const classToApply =
             choiceNumber == currentQuestion.answer ? "correct" : "incorrect";
