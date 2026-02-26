@@ -52,16 +52,19 @@ startGame = () => {
 
 getNewQuestion = () => {
     if (availableQuestions === 0 || questionCounter >= Max_Questions) {
+        localStorage.setItem("highscore", score);
         // got to the end page
         return window.location.assign("end.html")
     }
 
-     // Update Progress Bar
+
+
+    // Update Progress Bar
     progressItem.style.width = `${(questionCounter / Max_Questions) * 100}%`;
-    
+
     questionCounter++;
     questionCounterEl.innerText = `Questions: ${questionCounter}/${Max_Questions}`;
-   
+
 
     const counterIndex = Math.floor(Math.random() * availableQuestions.length);
     currentQuestion = availableQuestions[counterIndex];
@@ -84,19 +87,19 @@ choiceAnswerEl.forEach((choice) => {
         const choiceElement = e.target;
         const choiceNumber = choiceElement.dataset["number"];
 
-          const classToApply =
+        const classToApply =
             choiceNumber == currentQuestion.answer ? "correct" : "incorrect";
 
-            if(classToApply === "correct") {
-                updateScore(Score_Bonus)
-            }
-        
-            choiceElement.parentElement.classList.add(classToApply);
+        if (classToApply === "correct") {
+            updateScore(Score_Bonus)
+        }
 
-            setTimeout(() => {
-                 choiceElement.parentElement.classList.remove(classToApply);
-                getNewQuestion(); 
-            }, 1000)
+        choiceElement.parentElement.classList.add(classToApply);
+
+        setTimeout(() => {
+            choiceElement.parentElement.classList.remove(classToApply);
+            getNewQuestion();
+        }, 1000)
     });
 });
 

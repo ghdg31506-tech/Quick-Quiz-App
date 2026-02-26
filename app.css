@@ -33,7 +33,7 @@ h3 {
     font-weight: 700;
 }
 
-/* HOME PAGE */ 
+/* HOME PAGE */
 
 .container {
     width: 100vw;
@@ -45,9 +45,11 @@ h3 {
     margin: 0 auto;
     padding: 1rem;
 }
-.container > * {
+
+.container>* {
     width: 100%;
 }
+
 .flex-center {
     display: flex;
     justify-content: center;
@@ -58,7 +60,7 @@ h3 {
     align-items: center;
 }
 
-/* Button */ 
+/* Button */
 
 .btn {
     font-size: 1.5rem;
@@ -74,13 +76,29 @@ h3 {
 
 .btn:hover {
     cursor: pointer;
-    box-shadow: 0 0.4rem 0.4rem rgba(86,185,235,0.5);
+    box-shadow: 0 0.4rem 0.4rem rgba(86, 185, 235, 0.5);
     transform: translateY(-0.1rem);
     transition: transform 150ms;
 }
 
 .btn[disabled]:hover {
+    cursor: auto;
     box-shadow: none;
     transform: none;
     transition: none;
+}
+
+
+form {
+    width: 20rem;
+    height: 3.4rem;
+    margin-bottom: 2rem;
+    
+}
+
+#input {
+    font-size: 1.4rem;
+    padding: 1.4rem;
+    border: none;
+    outline: none;
 }
