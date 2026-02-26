@@ -1,0 +1,25 @@
+.choiceCounter {
+    width: 100%;
+    display: flex;
+    background-color: white;
+    margin-bottom: .5rem;
+}
+
+.choiceCounter:hover {
+    cursor: pointer;
+    box-shadow: 0 0.4rem 0.4rem rgba(86, 185, 235, 0.5);
+    transform: translateY(-0.1rem);
+    transition: transform 150ms;
+}
+
+.choice-profix {
+    padding: 1.5rem 2.5rem;
+    background-color: #56a5eb;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.choiceAnswer {
+    font-size: 1.5rem;
+    padding: 1.5rem 2.5rem;
+}

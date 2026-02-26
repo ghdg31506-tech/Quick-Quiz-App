@@ -23,8 +23,9 @@ h1 {
 }
 
 h2 {
-    font-size: 3rem;
-    font-weight: 500;
+    font-size: 3.4rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
 }
 
 h3 {
@@ -72,6 +73,7 @@ h3 {
 }
 
 .btn:hover {
+    cursor: pointer;
     box-shadow: 0 0.4rem 0.4rem rgba(86,185,235,0.5);
     transform: translateY(-0.1rem);
     transition: transform 150ms;
