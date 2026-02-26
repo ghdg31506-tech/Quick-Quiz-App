@@ -11,11 +11,11 @@
 <body>
     <div class="container">
         <div id="end" class="flex-center flex-column">
-            <h1 id="highScore">0</h1>
+            <h1 id="highSaveScore"></h1>
             <form>
-                <input type="text" class="username" id="input" placeholder="username" onclick="saveHighxcore(event)">
+                <input type="text" class="username" id="input" placeholder="username"finalScore>
             </form>
-            <button class="btn" id="savehighScore" disabled>Save</button>
+            <button type="submit" class="btn" id="savehighScore" onclick="saveHighxcore(event)" disabled>Save</button>
             <a class="btn" href="game.html">Play Again</a>
             <a class="btn" href="index.html">Go Home</a>
         </div>
