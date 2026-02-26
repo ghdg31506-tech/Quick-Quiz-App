@@ -32,3 +32,20 @@
 .incorrect {
     background-color: crimson;
 }
+
+/*hud*/
+
+#hud {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#hud-prefix {
+    font-size: 2rem;
+    text-align: center;
+}
+
+#score {
+    text-align: center;
+}
