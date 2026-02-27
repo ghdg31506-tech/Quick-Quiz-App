@@ -11,35 +11,29 @@ let score = 0;
 let questionCounter = 0;
 let availableQuestions = [];
 
-let questions = [
-    {
-        question: "Which CSS property is used to make text bold?",
-        choice1: "font-style",
-        choice2: "font-weight",
-        choice3: "text-transform",
-        choice4: "text-decoration",
-        answer: 2
-    },
+let questions = [];
 
-    {
-        question: "Which CSS property is used to make an element stay fixed at the top of the screen while scrolling?",
-        choice1: "position: relative",
-        choice2: "position: absolute",
-        choice3: "position: sticky",
-        choice4: "position: fixed",
-        answer: 4
-    },
+fetch("https://opentdb.com/api.php?amount=10&category=32&difficulty=medium&type=multiple")
+    .then(res => { return res.json() })
+    .then(loaddata => {
+        questions = loaddata.results.map(loadData => {
+            const formattedQuestion = {
+                question: loadData.question
+            }
 
-    {
-        question: "Which Javascript method is used to select an element by its ID?",
-        choice1: "querySelectorAll()",
-        choice2: "getElementById()",
-        choice3: "getElementByClassName()",
-        choice4: "selectElement",
-        answer: 2
-    }
-];
+            const answerChoice = [...loadData.incorrect_answers];
+            formattedQuestion.answer = Math.floor(Math.random() * 4) + 1;
+            answerChoice.splice(formattedQuestion.answer - 1, 0, loadData.correct_answer);
 
+            answerChoice.forEach((choice, index) => {
+                formattedQuestion["choice" + (index + 1)] = choice
+            })
+
+            return formattedQuestion;
+        })
+        startGame();
+
+    })
 
 
 const Score_Bonus = 10;
@@ -110,4 +104,3 @@ updateScore = num => {
     scoreEl.innerText = score;
 }
 
-  startGame();
