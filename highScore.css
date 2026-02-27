@@ -1,0 +1,14 @@
+.highscoreShow {
+    list-style: none;
+    margin-bottom: 3rem;
+}
+
+.liScore {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #56a5eb;
+}
+
+.liScore:hover {
+    transform: scale(1.02);
+}
