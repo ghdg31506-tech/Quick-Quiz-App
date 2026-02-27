@@ -2,6 +2,8 @@ const questionEl = document.querySelector("#question");
 const choiceAnswerEl = document.querySelectorAll(".choiceAnswer");
 const questionCounterEl = document.querySelector("#questionCounter");
 const scoreEl = document.querySelector("#score");
+const loader = document.querySelector("#loader");
+const game = document.querySelector("#game");
 const progressItem = document.querySelector("#progressItem");
 
 
@@ -44,6 +46,8 @@ startGame = () => {
     score = 0;
     availableQuestions = [...questions];
     getNewQuestion();
+    game.classList.remove("hidden");
+    loader.classList.add("hidden")
 }
 
 getNewQuestion = () => {
