@@ -40,8 +40,10 @@ let questions = [
     }
 ];
 
+
+
 const Score_Bonus = 10;
-const Max_Questions = 3;
+const Max_Questions = 5;
 
 startGame = () => {
     questionCounter = 0;
@@ -108,4 +110,4 @@ updateScore = num => {
     scoreEl.innerText = score;
 }
 
-startGame();
+  startGame();

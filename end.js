@@ -5,8 +5,8 @@ const finalScore = document.querySelector("#highSaveScore");
 
 finalScore.innerText = Score;
 
-const highScore = JSON.parse(localStorage.getItem("saveHighScore")) || [];
-console.log(highScore)
+const highScoree = JSON.parse(localStorage.getItem("saveHighScore")) || [];
+
 
 const MAX_HIGH_SCORE = 5;
 
@@ -24,11 +24,12 @@ saveHighxcore = (e) => {
         name: username.value
     }
 
-    highScore.push(score);
-    highScore.sort((a,b) => b.score - a.score);
-    highScore.splice(5);
+    highScoree.push(score);
+    highScoree.sort((a,b) => b.score - a.score);
+    highScoree.splice(5);
    
-    localStorage.setItem("saveHighScore" , JSON.stringify(highScore));
+    localStorage.setItem("saveHighScore" , JSON.stringify(highScoree));
+    console.log(highScoree)
 
     window.location.assign("index.html")
 }
